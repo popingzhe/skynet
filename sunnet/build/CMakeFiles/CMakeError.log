@@ -1,0 +1,53 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /root/sunnet/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec3365205478/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec3365205478.dir/build.make CMakeFiles/cmTryCompileExec3365205478.dir/build
+gmake[1]: 进入目录“/root/sunnet/build/CMakeFiles/CMakeTmp”
+/usr/bin/cmake -E cmake_progress_report /root/sunnet/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3365205478.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3365205478.dir/CheckSymbolExists.c.o   -c /root/sunnet/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3365205478
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3365205478.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3365205478.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3365205478 -rdynamic 
+CMakeFiles/cmTryCompileExec3365205478.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x16)：对‘pthread_create’未定义的引用
+collect2: 错误：ld 返回 1
+gmake[1]: 离开目录“/root/sunnet/build/CMakeFiles/CMakeTmp”
+gmake[1]: *** [cmTryCompileExec3365205478] 错误 1
+gmake: *** [cmTryCompileExec3365205478/fast] 错误 2
+
+File /root/sunnet/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /root/sunnet/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec244746841/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec244746841.dir/build.make CMakeFiles/cmTryCompileExec244746841.dir/build
+gmake[1]: 进入目录“/root/sunnet/build/CMakeFiles/CMakeTmp”
+/usr/bin/cmake -E cmake_progress_report /root/sunnet/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec244746841.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec244746841.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec244746841
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec244746841.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec244746841.dir/CheckFunctionExists.c.o  -o cmTryCompileExec244746841 -rdynamic -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: 错误：ld 返回 1
+gmake[1]: 离开目录“/root/sunnet/build/CMakeFiles/CMakeTmp”
+gmake[1]: *** [cmTryCompileExec244746841] 错误 1
+gmake: *** [cmTryCompileExec244746841/fast] 错误 2
+
+
